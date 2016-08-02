@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Testing "Responsive Class"</title>
+
+	<style type="text/css">
+
+		.myBaseArticle {
+			background-color: #dddddd;
+			border: 10px solid black;
+			padding: 1em;
+			margin: 1em;
+
+			size: 1.0em;
+
+			transition: border 0.3s ease-in;
+		}
+
+		.myBaseArticle.firstVariant  {
+			border-color: green;
+			size: 0.8em;
+
+
+		}
+
+		.myBaseArticle.secondVariant  {
+			border-color: red;
+			size: 0.9em;
+		}
+
+		.myBaseArticle.thirdVariant  {
+			border-color: blue;
+			size: 1.1em;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<h1>Testing "Responsive Class"</h1>
+
+	<p>Resize your window. The "article" element change it's classes according to the matching media-queries.</p>
+
+	<article class="rc myBaseArticle" class-small="firstVariant" class-medium="secondVariant" class-large="thirdVariant" >
+		<h2>Hello, this is a test</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</article>
+
+	<h2>How to ?</h2>
+
+	<h3>Include ResponsiveClass</h3>
+	<p>First, include and init the ResponsiveClass.</p>
+
+	<div class="code">&lt;script type="text/javascript" src="<strong>ResponsiveClass.js</strong>">&lt;/script&gt;
+	
+	&lt;script type="text/javascript"&gt;
+		<strong>var rc = RC.make();</strong>
+
+	&lt;/script&gt;</div>
+
+	<h3>Define your HTML</h3>
+	<p>Then, write your HTML and use the built-in formats (small, medium, large). Add the trigger class "rc" to activate.</p>
+
+	<div  class="code">&lt;article class="<strong>rc</strong> myBaseArticle" <strong>class-small="firstVariant" class-medium="secondVariant" class-large="thirdVariant"</strong>&gt;
+		...
+	&lt;/article&gt;
+	</div>
+
+
+	<script type="text/javascript" src="../src/ResponsiveClass.js"></script>
+	<script type="text/javascript">
+		var rc = RC.make();
+
+	</script>
+
+</body>
+</html>
