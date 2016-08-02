@@ -9,7 +9,7 @@
 4. Enjoy.
 
 In your HTML :
-> <article class="rc" class-small="firstVariant" class-medium="secondVariant" class-large="thirdVariant"> ... </article> 
+>  &lt;article class="rc" class-small="firstVariant" class-medium="secondVariant" class-large="thirdVariant"&gt; ... &lt;/article&gt;
 
 In your javascript :
 > var rc = RC.make();
