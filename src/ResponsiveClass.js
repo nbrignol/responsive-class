@@ -39,10 +39,15 @@ RC.ResponsiveClass.prototype.construct = function(userOptions){
 
 	if (this.options.autoStart) {
 		this.log("autoStart is on.");
-		this.updateOnResize();
+		this.start();
 	}
 	
 };
+
+RC.ResponsiveClass.prototype.start = function(){
+	this.updateOnResize();
+}
+
 
 RC.ResponsiveClass.prototype.mergeObject = function(objectA, objectB){
 

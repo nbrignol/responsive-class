@@ -32,7 +32,7 @@ You can configure lots of things by passing an object to the "make" method:
 * **onResizeTimeOut** is the time (in ms) wait before refreshing the classes after each resize. Default is 100
 * **showLog** control the output in console. Default is false
 * **withDefaultFormats** initiate the instance with default formats and media-queries (see below). Default is true
-* **autoStart** delay or not the first start. Useful when you want to redifine formats before starting the lib. Default is true. 
+* **autoStart** delay or not the first start. Useful when you want to redifine formats before starting the lib (you must call the "start" method when you are ready). Default is true. 
 
 ## Redifining formats and media-queries
 
@@ -45,6 +45,8 @@ You can define as many formats as you want by using the setClassFormat method. B
 > rc.setClassFormat("medium", '(min-width: 601px) and (max-width: 1100px)');
 
 > rc.setClassFormat("large", '(min-width: 1101px)');
+
+> rc.start();
 
 You can define or redifine whatever formats you want.
 
