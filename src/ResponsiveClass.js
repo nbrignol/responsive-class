@@ -10,7 +10,7 @@ RC.ResponsiveClass = function(userOptions){
 		'registerSelector': '.rc',
 		'attributeNamePrefix': 'class-',
 		'onResizeTimeOut' : 100,
-		'showLog' : true,
+		'showLog' : false,
 		'withDefaultFormats' : true,
 		'autoStart' : true,
 	};
@@ -99,6 +99,7 @@ RC.ResponsiveClass.prototype.update = function (){
 	this.log("Process update...");
 
 	this.refreshRegisteredElements();
+	this.checkMatches();
 	
 	for (var i = 0; i < this.registeredElements.length; i++) {
 		
@@ -114,6 +115,23 @@ RC.ResponsiveClass.prototype.pushArray = function (array, arrayToPush){
 	for (var i = 0; i < arrayToPush.length; i++) {
 		array.push(arrayToPush[i]);
 	};
+}
+
+RC.ResponsiveClass.prototype.checkMatches = function (){
+	var formatKeys = Object.keys(this.formats);
+
+	for (var i = 0; i < formatKeys.length; i++) {
+
+		var formatName = formatKeys[i];
+		var formatQuery = this.formats[formatName].query;
+
+		if (window.matchMedia(formatQuery).matches) {
+			this.formats[formatName].match = true;
+		} else {
+			this.formats[formatName].match = false;
+		}
+	}
+
 }
 
 RC.ResponsiveClass.prototype.processElement = function (element){
@@ -139,8 +157,7 @@ RC.ResponsiveClass.prototype.processElement = function (element){
 		}
 
 		this.log("found.");
-		this.log("query " + formatQuery);
-
+	
 		var attributeValue = element.getAttribute(attributeName);
 
 		if (! attributeValue) {
@@ -149,7 +166,7 @@ RC.ResponsiveClass.prototype.processElement = function (element){
 
 		var classes = attributeValue.split(" ");
 
-		if (window.matchMedia(formatQuery).matches) {
+		if (this.formats[formatName].match) {
 			this.pushArray(classesToAdd, classes);
 		} else {
 			this.pushArray(classesToRemove, classes);

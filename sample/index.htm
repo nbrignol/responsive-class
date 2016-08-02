@@ -18,6 +18,7 @@
 		}
 
 		.myBaseArticle.firstVariant  {
+
 			border-color: green;
 			size: 0.8em;
 
@@ -34,6 +35,18 @@
 			size: 1.1em;
 		}
 
+
+		.myBaseArticle.firstVariant:before  {
+			content:"My class is \"firstVariant\"";
+		}
+
+		.myBaseArticle.secondVariant:before  {
+			content:"My class is \"secondVariant\"";
+		}
+
+		.myBaseArticle.thirdVariant:before  {
+			content:"My class is \"thirdVariant\"";
+		}
 
 	</style>
 
@@ -77,7 +90,11 @@
 
 	<script type="text/javascript" src="../src/ResponsiveClass.js"></script>
 	<script type="text/javascript">
-		var rc = RC.make();
+		var options = {
+			"showLog": true,
+		};
+
+		var rc = RC.make(options);
 
 	</script>
 
