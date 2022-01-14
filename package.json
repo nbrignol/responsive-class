@@ -1,0 +1,19 @@
+{
+  "name": "responsive-class",
+  "version": "1.0.0",
+  "description": "Media query based classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbrignol/responsive-class.git"
+  },
+  "author": "Nicolas Brignol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nbrignol/responsive-class/issues"
+  },
+  "homepage": "https://github.com/nbrignol/responsive-class#readme"
+}
